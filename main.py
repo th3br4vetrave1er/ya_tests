@@ -1,14 +1,13 @@
 import datetime as dt
-
+FORMAT = '%Y/%m/%d'
 # creating bday function
 
 
-def get_days_to_birthday(date_birthday):
+def get_days_to_birthday(name, date_birthday):
     today = dt.date.today()
-    today_year = today.year
-    date_birthday = date_birthday.replace(year=today_year)
+    date_birthday = date_birthday.replace(year=today.year)
     if today > date_birthday:
-        date_birthday = date_birthday.replace(year=today_year+1)
+        date_birthday = date_birthday.replace(year=today+1)
     day_counter = date_birthday - today
     return day_counter.days
 
@@ -18,10 +17,8 @@ def get_days_to_birthday(date_birthday):
 # print(today)
 
 # establish kids bdays
-lera_bday = dt.date(year=2015, month=1, day=13)
-print(lera_bday)
+lera_bday = dt.date(year=2015, month=5, day=16)
 max_bday = dt.date(year=2011, month=12, day=16)
-print(max_bday)
 
 # establish today year
 # today_year = today.year
